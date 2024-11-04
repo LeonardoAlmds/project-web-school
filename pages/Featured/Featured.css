@@ -1,8 +1,9 @@
 .featured h2 {
-  padding: 30px 90px;
+  padding: 30px 90px 15px 90px;
   font-size: 24px;
   color: var(--color-font);
   font-weight: 600;
+  margin: 0 !important;
 }
 
 .grid-container {
