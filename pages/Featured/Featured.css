@@ -1,5 +1,5 @@
 .featured h2 {
-  padding: 15px 90px;
+  padding: 30px 90px;
   font-size: 24px;
   color: var(--color-font);
   font-weight: 600;
@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
-  padding: 15px 90px 60px;
+  padding: 0 90px;
 }
 
 @media (max-width: 1600px) {

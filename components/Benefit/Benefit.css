@@ -1,0 +1,28 @@
+.featured-section {
+  padding: 60px 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.feature-item {
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.feature-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #353535;
+}
+
+.feature-item p {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}

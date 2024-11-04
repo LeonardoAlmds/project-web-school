@@ -11,14 +11,14 @@ class PopularCategories extends HTMLElement {
               <img src="./assets/throne_liberty.png" alt="Throne and Liberty">
           </div>
           <div class="category-item">
-              <img src="./assets/throne_liberty.png" alt="Throne and Liberty">
+              <img src="./assets/genshin.png" alt="Genshin Impact">
           </div>
           <div class="category-item">
               <img src="./assets/throne_liberty.png" alt="Throne and Liberty">
           </div>
           <div class="category-item">
-              <img src="./assets/throne_liberty.png" alt="Throne and Liberty">
-          </div>   
+              <img src="./assets/genshin.png" alt="Genshin Impact">
+          </div>
         </div>
         <div class="view-all">
           <a href="#">Ver todas categorias</a>
