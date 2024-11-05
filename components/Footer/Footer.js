@@ -1,7 +1,6 @@
 class Footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <footer class="footer">
         <div class="footer-container">
           <div class="footer-section sobre">
             <h3>SOBRE</h3>
@@ -43,7 +42,6 @@ class Footer extends HTMLElement {
         <div class="footer-bottom">
           © K+ Services 2024 | TODOS OS DIREITOS RESERVADOS
         </div>
-      </footer>
     `;
   }
 }

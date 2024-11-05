@@ -24,12 +24,12 @@
 
 .footer-section h3 {
   font-size: 16px;
-  color: var(--border-color);
+  color: var(--color-text-footer);
   margin-bottom: 15px;
 }
 
 .footer-section p {
-  color: var(--border-color);
+  color: var(--color-text-footer);
   margin-bottom: 20px;
 }
 
@@ -42,13 +42,13 @@
 }
 
 .footer-section ul li a {
-  color: var(--border-color);
+  color: var(--color-text-footer);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .footer-section ul li a:hover {
-  color: var(--border-color);
+  color: var(--color-text-footer);
 }
 
 .sobre p {
@@ -63,7 +63,7 @@
 
 .sobre a {
   font-size: 30px;
-  color: var(--border-color);
+  color: var(--color-text-footer);
 }
 
 .social-icons a img {

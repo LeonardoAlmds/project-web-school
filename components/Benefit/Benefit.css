@@ -11,18 +11,18 @@
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 .feature-item h3 {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #353535;
+  color: var(--color-font);
 }
 
 .feature-item p {
   font-size: 14px;
-  color: #666;
+  color: var(--color-font);
   font-style: italic;
 }

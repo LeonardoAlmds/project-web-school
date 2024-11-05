@@ -1,4 +1,3 @@
-// Componente Card
 class Card extends HTMLElement {
   constructor() {
     super();

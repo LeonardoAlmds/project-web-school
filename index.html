@@ -15,20 +15,28 @@
     <script src="./components/Categories/Categories.js"></script>
     <link rel="stylesheet" href="./components/Categories/Categories.css">
 
-    <script src="./pages/Featured/Featured.js"></script>
-    <link rel="stylesheet" href="./pages/Featured/Featured.css">
-
+    <script src="./components/Featured/Featured.js"></script>
     <script src="./components/Card/Card.js"></script>
+    
 
     <script src="./components/Benefit/Benefit.js"></script>
     <link rel="stylesheet" href="/components/Benefit/Benefit.css">
 
     <script src="./components/Footer/Footer.js"></script>
     <link rel="stylesheet" href="./components/Footer/Footer.css">
+
+    <script src="BannerRotativo.js"></script>
+
+    <script src="/script.js"></script>
 </head>
 <body>
-    <main-header></main-header>
+    <header class="navbar">
+      <main-header></main-header>
+    </header>
+
     <popular-categories></popular-categories>
+
+    <banner-rotativo></banner-rotativo>
     
     <featured-section>
       <product-card slot="featured-cards" image="./assets/capa.jpg" title="Produto 1" price="R$ 29,90"></product-card>
@@ -46,6 +54,9 @@
     </featured-section>
 
     <website-benefits></website-benefits>
-    <website-footer></website-footer>
+    
+    <footer class="footer">
+      <website-footer></website-footer>
+    </footer>
 </body>
 </html>

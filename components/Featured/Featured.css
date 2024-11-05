@@ -1,0 +1,53 @@
+.featured h2 { 
+  padding: 45px 90px 20px 90px;
+  font-size: 24px;
+  color: var(--color-font);
+  font-weight: 600;
+  margin: 0 !important;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  padding: 0 90px;
+}
+
+.ver-mais-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 90px;
+}
+
+.ver-mais-div hr {
+  border: 2px solid #e3e3e3;
+  width: 100%;
+}
+
+
+.ver-mais {
+  display: block;
+  background: none;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+  font-family: var(--font);
+  font-weight: 600;
+  color: var(--color-font);
+  white-space: nowrap; 
+}
+
+.ver-mais:hover {
+  background-color: var(--color-primary-dark);
+}
+
+@media (max-width: 1600px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
