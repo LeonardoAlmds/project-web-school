@@ -12,10 +12,10 @@ class Navbar extends HTMLElement {
         </div>
 
         <nav class="navigation">
-          <a href="#">Categorias <i class="fas fa-chevron-down"></i></a>
+          <a href="#" id="categories-link">Categorias <i class="fas fa-chevron-down"></i></a>
           <button class="highlight-btn">Anunciar</button>
       
-          <button class="icon-btn" id="">
+          <button class="icon-btn">
             <i class="fas fa-shopping-cart"></i>
           </button>
 
@@ -29,19 +29,48 @@ class Navbar extends HTMLElement {
     this.searchBorder();
     this.onClickMenu();
     this.loadThemePreference();
+    this.setupCategoriesModal();
+  }
+
+  setupCategoriesModal() {
+    const categoriesLink = this.querySelector('#categories-link');
+    const modal = this.querySelector('#categories-modal');
+    const closeModalButton = this.querySelector('#close-modal');
+
+    categoriesLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      modal.classList.remove('hidden'); // Mostra o modal
+    });
+
+    closeModalButton.addEventListener('click', () => {
+      modal.classList.add('hidden'); // Oculta o modal
+    });
+  }
+
+  changeTheme(newTheme) {
+    localStorage.setItem('theme', newTheme);
+    window.dispatchEvent(new Event('themeChanged')); 
+  }
+  
+  updateBorder() {
+    const divInput = this.querySelector('.search-bar');
+    const savedTheme = localStorage.getItem('theme');
+    divInput.style.border = savedTheme === 'dark' ? '2px solid #343434' : '2px solid #E9E9E9';
   }
 
   searchBorder() {
     const input = this.querySelector('#search-input');
     const divInput = this.querySelector('.search-bar');
-
+  
     input.addEventListener('focus', () => {
-      divInput.style.border = '2px solid #89b3d2'; 
+      divInput.style.border = '2px solid #89b3d2';
     });
-
-    input.addEventListener('blur', () => {
-      divInput.style.border = '2px solid #E9E9E9';
-    });
+  
+    input.addEventListener('blur', this.updateBorder.bind(this));
+  
+    window.addEventListener('themeChanged', this.updateBorder.bind(this));
+  
+    this.updateBorder();
   }
 
   onClickMenu() {
@@ -83,7 +112,8 @@ class Navbar extends HTMLElement {
       const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
       localStorage.setItem('theme', theme);
 
-      // Altera o texto do botão
+      this.updateBorder();
+
       themeButton.innerHTML = document.body.classList.contains('dark-mode')
         ? '<i class="fas fa-sun"></i> Tema Claro'
         : '<i class="fas fa-moon"></i> Tema Escuro';
@@ -95,7 +125,7 @@ class Navbar extends HTMLElement {
     if (savedTheme === 'dark') {
       document.body.classList.add('dark-mode');
       const themeButton = this.querySelector('#btn-dark-theme');
-      themeButton.innerHTML = '<i class="fas fa-sun"></i> Tema Claro'; // Altera o texto do botão se o tema salvo for escuro
+      themeButton.innerHTML = '<i class="fas fa-sun"></i> Tema Claro'; 
     }
   }
 }

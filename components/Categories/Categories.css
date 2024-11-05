@@ -1,6 +1,5 @@
 .popular-categories {
   padding: 45px 90px 0 90px;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,4 +52,11 @@
 .view-all a::after {
   content: '→';
   margin-left: 5px;
+}
+
+@media (max-width: 1150px) {
+  .category-item {
+    width: 150px;
+    height: 200px;
+  }
 }

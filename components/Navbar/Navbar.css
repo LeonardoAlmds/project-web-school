@@ -32,8 +32,8 @@
   background: none;
   padding: 10px;
   font-size: 16px;
-  font-weight: 500;
-  opacity: 60%;
+  font-weight: 600;
+  color: var(--search-color);
   border-radius: 25px;
   -webkit-box-shadow: 0 0 0px 1000px var(--background-input) inset;
 }
@@ -48,7 +48,7 @@
   background: none;
   padding: 5px 10px;
   cursor: pointer;
-  color: rgb(50, 50, 50);
+  color: var(--search-color);
 }
 
 .navigation {
@@ -128,4 +128,3 @@
   margin-right: 6px;
   font-size: 16px;
 }
-
