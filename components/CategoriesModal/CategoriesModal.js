@@ -52,8 +52,10 @@ class CategoriesModal extends HTMLElement {
 
         // Adiciona o link para a página específica da categoria
         listItem.addEventListener('click', () => {
-          window.location.href = `/categoria/${category.id}`; // Modifique a URL conforme necessário
+          window.location.href = `/pages/categoria.html?id=${category.id}`;
         });
+
+        console.log(category.id)
 
         categoriesList.appendChild(listItem);
       });

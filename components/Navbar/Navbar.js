@@ -107,6 +107,11 @@ class Navbar extends HTMLElement {
         }, 0);
 
         this.toggleDarkMode();
+        // Adiciona redirecionamento ao botão de login
+        const loginButton = menuContainer.querySelector('#btn-login');
+        loginButton.addEventListener('click', () => {
+          window.location.href = '/pages/login.html';
+        });
       }
     });
   }

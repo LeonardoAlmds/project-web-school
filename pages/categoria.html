@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoria</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Captura o ID da categoria da URL
+        const params = new URLSearchParams(window.location.search);
+        const categoryId = params.get('id');
+
+        if (categoryId) {
+          // Chame a função para carregar os dados da categoria
+          carregarCategoria(categoryId);
+        }
+      });
+
+      function carregarCategoria(id) {
+        // Substitua pelo código para buscar ou renderizar o conteúdo
+        const categoryContent = document.getElementById('category-content');
+        // Exemplo de carregamento de conteúdo
+        categoryContent.innerHTML = `<h2>Categoria ${id}</h2><p>Detalhes da categoria ${id}</p>`;
+      }
+    </script>
+</head>
+<body>
+    <div id="category-content">Carregando...</div>
+</body>
+</html>
