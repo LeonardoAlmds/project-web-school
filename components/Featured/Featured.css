@@ -1,5 +1,5 @@
 .featured h2 { 
-  padding: 45px 90px 20px 90px;
+  padding: 45px 0 20px 0;
   font-size: 24px;
   color: var(--color-font);
   font-weight: 600;
@@ -10,7 +10,6 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
-  padding: 0 90px;
 }
 
 .ver-mais-div {

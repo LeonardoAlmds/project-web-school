@@ -25,6 +25,22 @@ class PopularCategories extends HTMLElement {
         </div>
       </div>
     `;
+
+    this.fetchCategories()
+  }
+
+  fetchCategories() {
+    if (typeof axios !== 'undefined') { // Verifica se o axios está disponível
+      axios
+        .get(`http://localhost:8080/api/categories`)
+        .then((response) => {
+          const resp = response.data;
+          console.log(resp);
+        })
+        .catch(error => console.error("Erro ao buscar categorias:", error));
+    } else {
+      console.error("Axios não está disponível");
+    }
   }
 }
 

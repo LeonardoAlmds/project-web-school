@@ -8,7 +8,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  margin: 0 90px;
 }
 
 .logo img {
@@ -57,14 +56,17 @@
   gap: 20px;
 }
 
-.navigation a {
+.navigation #categories {
   text-decoration: none;
   color: var(--color-font);
   font-size: 16px;
   font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.navigation a i {
+.navigation #categories i {
   margin-left: 5px;
 }
 
@@ -128,3 +130,4 @@
   margin-right: 6px;
   font-size: 16px;
 }
+

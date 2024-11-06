@@ -1,15 +1,9 @@
-.footer {
-  background-color: #222;
-  color: var(--border-color);
-  padding: 40px 0 0 0;
-  font-size: 14px;
-}
-
 .footer-container {
   display: flex;
-  padding: 0 90px;
   align-items: center;
   gap: 90px;
+  padding: 60px 0 ;
+  font-size: 16px;
 }
 
 .content-footer-right {
@@ -52,7 +46,8 @@
 }
 
 .sobre p {
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .sobre .social-icons {
@@ -78,5 +73,4 @@
   color: #666;
   font-weight: 600;
   border-top: 1px solid #444;
-  margin-top: 20px;
 }

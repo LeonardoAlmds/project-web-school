@@ -12,16 +12,10 @@ class Navbar extends HTMLElement {
         </div>
 
         <nav class="navigation">
-          <a href="#" id="categories-link">Categorias <i class="fas fa-chevron-down"></i></a>
+          <button id="categories">Categorias <i class="fas fa-chevron-down"></i></button>
           <button class="highlight-btn">Anunciar</button>
-      
-          <button class="icon-btn">
-            <i class="fas fa-shopping-cart"></i>
-          </button>
-
-          <button class="icon-btn" id="btn-menu">
-            <i class="fas fa-bars"></i>
-          </button>
+          <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+          <button class="icon-btn" id="btn-menu"><i class="fas fa-bars"></i></button>
         </nav>
       </div>
     `;
@@ -33,20 +27,33 @@ class Navbar extends HTMLElement {
   }
 
   setupCategoriesModal() {
-    const categoriesLink = this.querySelector('#categories-link');
-    const modal = this.querySelector('#categories-modal');
-    const closeModalButton = this.querySelector('#close-modal');
-
-    categoriesLink.addEventListener('click', (event) => {
+    const categoriesButton = this.querySelector('#categories');
+  
+    // Verifica se o modal já existe
+    let modal = this.querySelector('categories-modal');
+    
+    if (!modal) {
+      // Cria uma instância do modal se não existir
+      modal = new CategoriesModal();
+      this.appendChild(modal);  // Adiciona o modal ao DOM
+    }
+  
+    categoriesButton.addEventListener('click', async (event) => {
       event.preventDefault();
-      modal.classList.remove('hidden'); // Mostra o modal
-    });
-
-    closeModalButton.addEventListener('click', () => {
-      modal.classList.add('hidden'); // Oculta o modal
+      try {
+        const response = await fetch('http://localhost:8080/api/categories');
+        if (response.ok) {
+          const categories = await response.json();
+          modal.show(categories);  // Exibe o modal com categorias
+        } else {
+          console.error('Erro ao carregar categorias:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Erro na requisição:', error);
+      }
     });
   }
-
+  
   changeTheme(newTheme) {
     localStorage.setItem('theme', newTheme);
     window.dispatchEvent(new Event('themeChanged')); 
@@ -106,28 +113,41 @@ class Navbar extends HTMLElement {
 
   toggleDarkMode() {
     const themeButton = this.querySelector('#btn-dark-theme');
-
+    if (!themeButton) return; // Verificação para evitar erro
+  
     themeButton.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
       localStorage.setItem('theme', theme);
-
+  
       this.updateBorder();
-
-      themeButton.innerHTML = document.body.classList.contains('dark-mode')
+  
+      themeButton.innerHTML = theme === 'dark'
         ? '<i class="fas fa-sun"></i> Tema Claro'
         : '<i class="fas fa-moon"></i> Tema Escuro';
     });
+  
+    // Define o texto do botão ao carregar a preferência de tema
+    const savedTheme = localStorage.getItem('theme');
+    themeButton.innerHTML = savedTheme === 'dark'
+      ? '<i class="fas fa-sun"></i> Tema Claro'
+      : '<i class="fas fa-moon"></i> Tema Escuro';
+  }
+  
+  loadThemePreference() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
   }
 
-  loadThemePreference() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-      const themeButton = this.querySelector('#btn-dark-theme');
-      themeButton.innerHTML = '<i class="fas fa-sun"></i> Tema Claro'; 
-    }
+  // Verifica se o botão existe antes de tentar definir o conteúdo
+  const themeButton = this.querySelector('#btn-dark-theme');
+  if (themeButton) {
+    themeButton.innerHTML = savedTheme === 'dark'
+      ? '<i class="fas fa-sun"></i> Tema Claro'
+      : '<i class="fas fa-moon"></i> Tema Escuro';
   }
+}
 }
 
 customElements.define('main-header', Navbar);
