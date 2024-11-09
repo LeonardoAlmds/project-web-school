@@ -8,27 +8,18 @@
     <link rel="stylesheet" href="global.css">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
     <script src="./components/Navbar/Navbar.js"></script>
     <link rel="stylesheet" href="./components/Navbar/Navbar.css">
     
-    <script src="./components/Categories/Categories.js"></script>
-    <link rel="stylesheet" href="./components/Categories/Categories.css">
-
-    <script src="./components/Featured/Featured.js"></script>
-    <script src="./components/Card/Card.js"></script>
-    
-
-    <script src="./components/Benefit/Benefit.js"></script>
-    <link rel="stylesheet" href="/components/Benefit/Benefit.css">
-
     <script src="./components/Footer/Footer.js"></script>
     <link rel="stylesheet" href="./components/Footer/Footer.css">
 
-    <script src="BannerRotativo.js"></script>
-
     <script src="./components/CategoriesModal/CategoriesModal.js"></script>
-   
+  
+    <script src="./components/Featured/Featured.js"></script>
+    <script src="./components/Card/Card.js"></script>
+
+    <link rel="stylesheet" href="./Category/category.css">
 </head>
 <body>
     <header class="navbar">
@@ -36,19 +27,28 @@
     </header>
 
     <main>
-      <popular-categories></popular-categories>
+      <div class="category-container">
+          <img id="category-image" src="https://via.placeholder.com/80" alt="Categoria">
+          <div>
+              <h1 id="category-name">Categoria</h1>
+              <p id="category-description">Compra e venda de services.</p>
+          </div>  
 
-      <banner-rotativo></banner-rotativo>
-      
-      <featured-section></featured-section>
+          <!-- Novo botão acima do campo de pesquisa -->
+          <a href="categories.html" class="category-btn">Ver todas as categorias</a>
 
-      <website-benefits></website-benefits>
+          <input class="product-search category-search" type="text" id="product-search" placeholder="Pesquisar produto...">
+
+          <featured-section>
+              <!-- Aqui vai o conteúdo do Shadow DOM, onde os produtos são carregados -->
+          </featured-section>
+      </div>
     </main>
     
     <footer class="footer">
       <website-footer></website-footer>
     </footer>
     
-    <script src="./Homepage/Home.js"></script>
+    <script src="./Category/category.js"></script>
 </body>
 </html>

@@ -47,12 +47,12 @@ class CategoriesModal extends HTMLElement {
 
         // Cria o nome da categoria
         const name = document.createElement('span');
-        name.textContent = category.category || 'Categoria sem nome';
+        name.textContent = category.name || 'Categoria sem nome';
         listItem.appendChild(name);
 
         // Adiciona o link para a página específica da categoria
         listItem.addEventListener('click', () => {
-          window.location.href = `/pages/categoria.html?id=${category.id}`;
+          window.location.href = `category.html?id=${category.id}`;
         });
 
         console.log(category.id)

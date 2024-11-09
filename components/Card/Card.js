@@ -8,7 +8,7 @@ class Card extends HTMLElement {
     const image = this.getAttribute('image') || './assets/default.jpg';
     const title = this.getAttribute('title') || 'Título do Produto';
     const price = this.getAttribute('price') || 'R$ 0,00';
-
+    
     this.shadowRoot.innerHTML = `
       <style>
         @import "./components/Card/Card.css";
@@ -19,7 +19,7 @@ class Card extends HTMLElement {
         <p class="price">${price}</p>
       </div>
     `;
-  }
+  }  
 }
 
 customElements.define('product-card', Card);

@@ -3,9 +3,9 @@ class BannerRotativo extends HTMLElement {
     super();
     this.indiceSlide = 0;
     this.imagens = [
-      './assets/capa.jpg', // Substitua com o caminho das suas imagens
-      './assets/genshin.png',
-      './assets/capa.jpg'
+      './assets/fortnite_2.png',
+      './assets/vava_2.png',
+      './assets/minecraft_2.png'
     ];
   }
 

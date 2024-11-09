@@ -4,43 +4,51 @@ class PopularCategories extends HTMLElement {
       <div class="popular-categories">
         <h2>Categorias Populares</h2>
         <div class="categories-container">
-          <div class="category-item">
-              <img src="./assets/genshin.png" alt="Genshin Impact">
-          </div>
-          <div class="category-item">
-              <img src="./assets/throne_liberty.png" alt="Throne and Liberty">
-          </div>
-          <div class="category-item">
-              <img src="./assets/genshin.png" alt="Genshin Impact">
-          </div>
-          <div class="category-item">
-              <img src="./assets/throne_liberty.png" alt="Throne and Liberty">
-          </div>
-          <div class="category-item">
-              <img src="./assets/genshin.png" alt="Genshin Impact">
-          </div>
+          <!-- As categorias serão inseridas aqui dinamicamente -->
         </div>
         <div class="view-all">
-          <a href="#">Ver todas categorias</a>
+          <a href="/categories.html">Ver todas categorias</a>
         </div>
       </div>
     `;
 
-    this.fetchCategories()
+    this.fetchCategories();
   }
 
-  fetchCategories() {
-    if (typeof axios !== 'undefined') { // Verifica se o axios está disponível
-      axios
-        .get(`http://localhost:8080/api/categories`)
-        .then((response) => {
-          const resp = response.data;
-          console.log(resp);
-        })
-        .catch(error => console.error("Erro ao buscar categorias:", error));
-    } else {
-      console.error("Axios não está disponível");
+  async fetchCategories() {
+    try {
+      const response = await fetch('http://localhost:8080/api/categories/top');
+      
+      if (!response.ok) {
+        throw new Error("Erro ao buscar categorias populares");
+      }
+      
+      const categories = await response.json();
+      this.renderCategories(categories);
+    } catch (error) {
+      console.error("Erro ao buscar categorias:", error);
     }
+  }
+
+  renderCategories(categories) {
+    const container = this.querySelector('.categories-container');
+    container.innerHTML = ''; // Limpa o container antes de inserir os novos itens
+
+    categories.forEach(category => {
+      const categoryItem = document.createElement('div');
+      categoryItem.classList.add('category-item');
+
+      // Cria o link com o id da categoria
+      const categoryLink = document.createElement('a');
+      categoryLink.href = `Category.html?id=${category.id}`;
+
+      categoryLink.innerHTML = `
+        <img src="${category.banner_url}" alt="${category.name}">
+      `;
+
+      categoryItem.appendChild(categoryLink);
+      container.appendChild(categoryItem);
+    });
   }
 }
 

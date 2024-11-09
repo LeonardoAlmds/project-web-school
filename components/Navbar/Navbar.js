@@ -2,7 +2,7 @@ class Navbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <div class="content-navbar">
-        <img src="./assets/logo.svg" alt="Logo K+">
+        <a href="/"><img src="./assets/logo.svg" alt="Logo K+"></a>
         
         <div class="search-bar">
           <button class="search-btn" id="search-btn">
