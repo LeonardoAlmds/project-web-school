@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto - Detalhes</title>
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="global.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="./components/Navbar/Navbar.js"></script>
+    <link rel="stylesheet" href="./components/Navbar/Navbar.css">
+    
+    <script src="./components/Footer/Footer.js"></script>
+    <link rel="stylesheet" href="./components/Footer/Footer.css">
+
+    <script src="./components/CategoriesModal/CategoriesModal.js"></script>
+
+    <link rel="stylesheet" href="./Product/Product.css">
+</head>
+<body>
+    <header class="navbar">
+        <main-header></main-header>
+    </header>
+
+    <main>
+        <div class="product-container">
+            <div class="product-info">
+                <img id="product-image" src="" alt="Produto">
+                    <div class="product-details">
+                        <div>
+                            <h1 id="product-name">Produto</h1>
+                            
+                            <div class="product-category">
+                                <img id="category-icon" src="" alt="Categoria">
+                                <span id="category-name">Categoria</span>
+                            </div>
+        
+                            <div class="product-stats">
+                                <div class="stat">
+                                    <span class="stat-title">DISPONÍVEIS</span>
+                                    <span id="available-count" class="stat-value">35</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-title">VENDIDOS</span>
+                                    <span id="product-sold" class="stat-value">2260</span>
+                                </div>
+                            </div>
+                            
+                            <p><span class="price" id="product-price">R$ 0.00</span></p>
+                        </div>
+        
+                        <button class="buy-button">Comprar</button>
+                        <button id="share-button" class="share-button">Compartilhar</button>
+                </div>
+                
+            </div>
+
+            <h2 class="desc-title">Descrição do Produto</h2>
+
+            <div class="product-description">
+                <p id="product-description">Descrição do produto.</p>
+            </div>
+
+            <div class="product-questions">
+                <div class="content-questions">
+                    <h2>Perguntas</h2>
+                    <div id="questions-list">
+                        <!-- Perguntas serão carregadas aqui -->
+                    </div>
+                    <div class="ask-question">
+                        <textarea id="new-question" placeholder="Faça sua pergunta..."></textarea>
+                        <button id="ask-question-btn">Perguntar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <website-footer></website-footer>
+    </footer>
+
+    <script src="./Product/Product.js"></script>
+</body>
+</html>

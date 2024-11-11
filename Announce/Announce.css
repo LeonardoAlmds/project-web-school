@@ -1,0 +1,87 @@
+.registration-form {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.registration-form h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 26px;
+  color: var(--color-font);
+}
+
+/* Estilizando os rótulos e campos de input */
+.registration-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--color-font);
+}
+
+.registration-form input,
+.registration-form select,
+.registration-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-input-search);
+  color: var(--search-color);
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.registration-form input:focus,
+.registration-form select:focus,
+.registration-form textarea:focus {
+  border-color: var(--border-input-search);
+  outline: none;
+}
+
+.registration-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.registration-form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--blue-primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.registration-form button:hover {
+  background-color: var(--blue-hover);
+}
+
+.registration-form p {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--color-font);
+}
+
+/* Estilos adicionais */
+.registration-form input[type="number"], input[type="text"] {
+  -moz-appearance: textfield; 
+}
+
+.registration-form input[type="number"]::-webkit-outer-spin-button,
+.registration-form input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+

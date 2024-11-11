@@ -13,7 +13,7 @@ class Navbar extends HTMLElement {
 
         <nav class="navigation">
           <button id="categories">Categorias <i class="fas fa-chevron-down"></i></button>
-          <button class="highlight-btn">Anunciar</button>
+          <button class="highlight-btn" id="announce-btn">Anunciar</button>
           <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
           <button class="icon-btn" id="btn-menu"><i class="fas fa-bars"></i></button>
         </nav>
@@ -24,6 +24,14 @@ class Navbar extends HTMLElement {
     this.onClickMenu();
     this.loadThemePreference();
     this.setupCategoriesModal();
+    this.setupAnnounceButton(); // Add this method to handle the announce button
+  }
+
+  setupAnnounceButton() {
+    const announceButton = this.querySelector('#announce-btn');
+    announceButton.addEventListener('click', () => {
+      window.location.href = '/announce.html'; // Redirect to announce.html
+    });
   }
 
   setupCategoriesModal() {
@@ -140,19 +148,19 @@ class Navbar extends HTMLElement {
   }
   
   loadThemePreference() {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
 
-  // Verifica se o botão existe antes de tentar definir o conteúdo
-  const themeButton = this.querySelector('#btn-dark-theme');
-  if (themeButton) {
-    themeButton.innerHTML = savedTheme === 'dark'
-      ? '<i class="fas fa-sun"></i> Tema Claro'
-      : '<i class="fas fa-moon"></i> Tema Escuro';
+    // Verifica se o botão existe antes de tentar definir o conteúdo
+    const themeButton = this.querySelector('#btn-dark-theme');
+    if (themeButton) {
+      themeButton.innerHTML = savedTheme === 'dark'
+        ? '<i class="fas fa-sun"></i> Tema Claro'
+        : '<i class="fas fa-moon"></i> Tema Escuro';
+    }
   }
-}
 }
 
 customElements.define('main-header', Navbar);

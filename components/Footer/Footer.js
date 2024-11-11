@@ -16,26 +16,17 @@ class Footer extends HTMLElement {
             <div class="footer-section">
               <h3>ACESSO RÁPIDO</h3>
               <ul>
-                <li><a href="#">Anunciar</a></li>
-                <li><a href="#">Categorias</a></li>
+                <li><a href="./announce.html">Anunciar</a></li>
+                <li><a href="./categories.html">Categorias</a></li>
                 <li><a href="#">Central de Ajuda</a></li>
               </ul>
             </div>
-            <div class="footer-section">
-              <h3>COMO FUNCIONA</h3>
-              <ul>
-                <li><a href="#">Como funciona</a></li>
-                <li><a href="#">Vantagens</a></li>
-                <li><a href="#">Verificador de contas</a></li>
-              </ul>
-            </div>
-            <div class="footer-section">
-              <h3>INSTITUCIONAL</h3>
-              <ul>
-                <li><a href="#">Termos de uso</a></li>
-                <li><a href="#">Política de privacidade</a></li>
-                <li><a href="#">Trabalhe conosco</a></li>
-              </ul>
+            <div class="newsletter">
+              <h3>Inscreva-se para receber novidades!</h3>
+              <form id="newsletter-form">
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                <button type="submit">Inscrever-se</button>
+              </form>
             </div>
           </div>
         </div>

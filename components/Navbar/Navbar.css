@@ -81,6 +81,10 @@
   font-size: 16px;
 }
 
+.highlight-btn:hover {
+  background-color: var(--blue-hover);
+}
+
 .navigation .icon-btn {
   background: none;
   padding: 10px;

@@ -42,6 +42,11 @@ if (categoryId) {
             productCard.setAttribute('price', `R$ ${parseFloat(product.price).toFixed(2)}`);
             gridContainer.appendChild(productCard);
 
+            // Adiciona evento de clique para redirecionar para a página do produto
+            productCard.addEventListener('click', () => {
+              window.location.href = `/product.html?id=${product.id}`;
+            });
+
             setTimeout(() => {
               productCard.classList.add('visible');
             }, index * 100); // Atraso progressivo baseado no índice do produto

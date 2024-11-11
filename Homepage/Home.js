@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
             productCard.setAttribute('title', product.name);
             productCard.setAttribute('price', `R$ ${parseFloat(product.price).toFixed(2)}`);
             featuredSection.appendChild(productCard);
+
+            // Adiciona o evento de clique para redirecionar para a página do produto
+            productCard.addEventListener('click', () => {
+              window.location.href = `/product.html?id=${product.id}`;
+            });
           });
         }
       } catch (error) {

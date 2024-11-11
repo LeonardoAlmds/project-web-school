@@ -45,7 +45,7 @@ function renderCategories(categories) {
 
     // Adiciona um evento de clique para redirecionar para a página de categorias
     categoryCard.addEventListener('click', () => {
-      window.location.href = `Category.html?id=${category.id}`; // Redireciona para a página Category.html
+      window.location.href = `category.html?id=${category.id}`; // Redireciona para a página Category.html
     });
 
     // Adicionar o card ao container principal

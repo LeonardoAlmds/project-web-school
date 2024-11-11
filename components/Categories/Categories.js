@@ -40,7 +40,7 @@ class PopularCategories extends HTMLElement {
 
       // Cria o link com o id da categoria
       const categoryLink = document.createElement('a');
-      categoryLink.href = `Category.html?id=${category.id}`;
+      categoryLink.href = `category.html?id=${category.id}`;
 
       categoryLink.innerHTML = `
         <img src="${category.banner_url}" alt="${category.name}">

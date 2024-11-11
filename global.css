@@ -9,6 +9,7 @@
   --black: #000000;
   --color-font: #787878;
   --blue-primary: #0B6BB5;
+  --blue-hover: #007BFF;
   --border-color: #ccc;
   --color-text-footer: #8e8e8e;
 
@@ -22,6 +23,10 @@
 
   --border-search-category: #c6c6c6;
   --font-color-search-category: #000000;
+
+  --background-questions: #e0e0e0;
+  --question-color: #d6d6d6;
+  --question-answer: #c7c7c7;
 }
 
 * {
@@ -54,6 +59,10 @@ body.dark-mode {
 
   --border-search-category: #474747;
   --font-color-search-category: #dbdbdb;
+
+  --background-questions: #252525;
+  --question-color: #202020;
+  --question-answer: #1a1a1a;
 }
 
 header, main, footer {
