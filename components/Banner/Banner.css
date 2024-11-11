@@ -1,0 +1,44 @@
+.banner-rotativo {
+  position: relative;
+  max-width: 100%;
+  max-height: 600px;
+  overflow: hidden;
+  padding: 30px 0 0 0;
+}
+
+.slides img {
+  width: 100%;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.slides img.ativo {
+  display: block;
+  opacity: 1;
+}
+
+.anterior, .proximo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
+}
+
+.anterior {
+  left: 120px;
+}
+
+.proximo {
+  right: 120px;
+}
+
+@media (max-width: 1600px) {
+  .banner-rotativo {
+    max-height: 500px;
+  }
+}

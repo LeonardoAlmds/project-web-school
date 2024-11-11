@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Empresa</title>
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./pages/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Componentes -->
+    <script src="./components/Navbar/Navbar.js"></script>
+    <link rel="stylesheet" href="./components/Navbar/Navbar.css">
+
+    <script src="./components/Footer/Footer.js"></script>
+    <link rel="stylesheet" href="./components/Footer/Footer.css">
+
+    <script src="./components/CategoriesModal/CategoriesModal.js"></script>
+
+    <!-- Estilos da página Sobre -->
+    <link rel="stylesheet" href="./pages/About/About.css">
+
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API&callback=initMap"></script>
+</head>
+<body>
+    <header class="navbar">
+        <main-header></main-header>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <h1>Sobre Nós</h1>
+            <p>Bem-vindo à nossa empresa! Estamos comprometidos em oferecer serviços de alta qualidade, sempre focados na satisfação e confiança de nossos clientes. Nosso objetivo é superar expectativas e construir relacionamentos duradouros com cada um de vocês.</p>
+        </section>
+
+        <div class="location-section">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1974.0482659870852!2d-35.95339374341243!3d-8.293191797926786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a98be8cf3157dd%3A0x98a0a3ecad4be817!2sCentro%20Universit%C3%A1rio%20UniFavip%20-%20Wyden%20-%20Entrada%20Principal!5e0!3m2!1spt-BR!2sbr!4v1731348333227!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          
+          <section class="contact-form-section">
+            <h2>Contato</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="birthdate">Data de Nascimento:</label>
+                  <input type="date" id="birthdate" name="birthdate" required>
+                </div>              
+                <button type="submit">Enviar</button>
+                <p id="confirmation-message" style="display: none; color: var(--blue-hover); margin-top: 15px; font-weight: 500;">Formulário enviado com sucesso!</p>
+            </form>
+          </section>
+        </div>
+        
+    </main>
+
+    <footer class="footer">
+        <website-footer></website-footer>
+    </footer>
+
+    <script src="./pages/About/About.js"></script>
+    
+</body>
+</html>
