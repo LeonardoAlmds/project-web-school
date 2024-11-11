@@ -13,6 +13,7 @@ class Navbar extends HTMLElement {
 
         <nav class="navigation">
           <button id="categories">Categorias <i class="fas fa-chevron-down"></i></button>
+          <button id="about">Sobre</button>
           <button class="highlight-btn" id="announce-btn">Anunciar</button>
           <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
           <button class="icon-btn" id="btn-menu"><i class="fas fa-bars"></i></button>
@@ -24,13 +25,20 @@ class Navbar extends HTMLElement {
     this.onClickMenu();
     this.loadThemePreference();
     this.setupCategoriesModal();
-    this.setupAnnounceButton(); // Add this method to handle the announce button
+    this.setupAnnounceButton(); 
+    this.setupAboutButton();
   }
 
   setupAnnounceButton() {
     const announceButton = this.querySelector('#announce-btn');
     announceButton.addEventListener('click', () => {
       window.location.href = '/announce.html'; // Redirect to announce.html
+    });
+  }
+  setupAboutButton() {
+    const aboutButton = this.querySelector('#about');
+    aboutButton.addEventListener('click', () => {
+      window.location.href = '/about.html'; // Redirect to announce.html
     });
   }
 
